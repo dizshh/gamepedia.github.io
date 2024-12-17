@@ -1,12 +1,12 @@
 :root {
     --primary: #2c3e50;
     --secondary: #34495e;
-    --accent: #3498db;
+    --accent: #A020F0;
     --text: #ecf0f1;
 }
 
 header {
-    background: rgba(0, 0, 0, 0.3);
+    background: transparent;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -14,7 +14,12 @@ header {
     border-radius: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    width: 100%; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 nav {
@@ -30,7 +35,6 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -52,7 +56,7 @@ nav {
 }
 
 .nav-links a {
-    color: var(--text);
+    color: #000000;
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -65,10 +69,22 @@ nav {
     color: white;
 }
 
-/* Responsive Styles */
+.close-button {
+    display: none;
+}
+
+
 @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .menu-toggle {
         display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1.2rem;
     }
 
     .nav-links {
@@ -96,5 +112,48 @@ nav {
         width: 100%;
         padding: 0.8rem 1rem;
         display: block;
+        font-weight: 600;
+        color: var(--text);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
     }
+
+    .nav-links a:hover {
+        background-color: var(--accent);
+        color: #fff;
+        transform: translateX(10px);
+    }
+
+    .close-button {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--text);
+        padding: 0.5rem;
+        line-height: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+        width: calc(100% - 50px);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.game-card {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.game-card:nth-child(n) {
+    animation-delay: calc(n * 0.1s);
 }
