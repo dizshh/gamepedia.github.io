@@ -56,64 +56,47 @@ h2 {
     background: rgba(255, 255, 255, 0.05);
     padding: 2rem;
     border-radius: 10px;
-    transition: transform 0.3s ease;
-    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
 }
 
 .feature-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
-.feature-card h3 {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Statistics Section */
 .stats {
     display: flex;
-    justify-content: space-around;
-    margin: 4rem 0;
-    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem 0;
 }
 
 .stat-item {
     text-align: center;
-    padding: 1rem;
 }
 
 .number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #4a90e2;
+    font-size: 3rem;
+    color: var(--accent);
 }
 
-/* Buttons */
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background: linear-gradient(45deg, #4a90e2, #63f5aa);
-    color: white;
+    background-color: var(--accent);
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 5px;
     text-decoration: none;
-    border-radius: 30px;
     margin-top: 2rem;
-    transition: transform 0.3s ease;
 }
 
 .cta-button:hover {
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    margin-top: 4rem;
-    padding: 2rem 0;
-    text-align: center;
+    background-color: #2980b9;
 }
